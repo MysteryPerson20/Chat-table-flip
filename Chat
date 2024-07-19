@@ -1,0 +1,13 @@
+-- Function to send chat messages
+local function sendChatMessage(message)
+    local player = game.Players.LocalPlayer
+    local chatService = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
+    local sayMessageRequest = chatService:WaitForChild("SayMessageRequest")
+
+    sayMessageRequest:FireServer(message, "All")
+end
+
+-- Sending the chat messages
+sendChatMessage("KILLER MOVE")
+wait(1)  -- Adding a small delay between messages
+sendChatMessage("ULTIMATE DROP FLIP")
